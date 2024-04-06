@@ -4,3 +4,4 @@ __pycache__
 db.sqlite3
 # ignore environment variable
 .env
+migrations/

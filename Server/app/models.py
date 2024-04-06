@@ -3,7 +3,7 @@ from authentication.models import CustomUser
 
 # Applicant details
 class ApplicantDetails(models.Model):
-    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, related_name="applicant")
     resume_link = models.URLField(max_length=250)
     portfolio_link = models.URLField(max_length=250)
     
@@ -16,7 +16,7 @@ class ApplicationDetails(models.Model):
         ("Rejected", 'Rejected'),
         ("submitted", 'Submitted')
     ]
-    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="applications")
     position = models.CharField(max_length=200)
     status = models.CharField(max_length=50, choices=status_choice, default="Applying")
     application_date = models.DateField(auto_now_add=True)
