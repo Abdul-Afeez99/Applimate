@@ -10,9 +10,10 @@ This project uses [Poetry](https://python-poetry.org/) - **A PYTHON PACKAGING AN
 > poetry shell
 4. Install the dependencies on your local env using the command
 > poetry install
-5. To makemigrations, run
+5. create a .env file to store secret keys and private keys
+6. To makemigrations, run
 > py manage.py makemigrations
-6. To migrate the database, run
+7. To migrate the database, run
 > py manage.py migrate
-7. To run the server, run
+8. To run the server, run
 > py manage.py runserver 
